@@ -36,15 +36,42 @@ ExpressGenerator.prototype.askFor = function askFor() {
   }.bind(this));
 };
 
-ExpressGenerator.prototype.app = function app() {
+ExpressGenerator.prototype.createFolders = function createFolders () {
   this.mkdir('app');
-  this.mkdir('app/templates');
-
-  this.copy('_package.json', 'package.json');
-  this.copy('_bower.json', 'bower.json');
+  this.mkdir('app/config');
+  this.mkdir('app/config/middleware');
+  this.mkdir('app/controllers');
+  this.mkdir('app/models');
+  this.mkdir('app/utils');
+  this.mkdir('app/views');
+  this.mkdir('app/views/assets');
+  this.mkdir('app/views/assets/css');
+  this.mkdir('app/views/assets/img');
+  this.mkdir('app/views/assets/js');
+  this.mkdir('app/views/layouts');
+  this.mkdir('app/views/partials');
+  this.mkdir('shared');
+  this.mkdir('shared/controllers');
+  this.mkdir('shared/models');
+  this.mkdir('shared/views');
+  this.mkdir('site');
+  this.mkdir('site/controllers');
+  this.mkdir('site/models');
+  this.mkdir('site/views');
+  this.mkdir('site/views/assets');
+  this.mkdir('site/views/assets/css');
+  this.mkdir('site/views/assets/img');
+  this.mkdir('site/views/assets/js');
+  this.mkdir('site/views/layouts');
+  this.mkdir('site/views/partials');
 };
 
-ExpressGenerator.prototype.projectfiles = function projectfiles() {
-  this.copy('editorconfig', '.editorconfig');
-  this.copy('jshintrc', '.jshintrc');
+ExpressGenerator.prototype.getProjectFiles = function getProjectFiles () {
+  this.copy('_package.json', 'package.json');
+  this.copy('_bower.json', 'bower.json');
+  this.copy('_README.md', 'README.md');
+};
+
+ExpressGenerator.prototype.createAppFiles = function createAppFiles () {
+
 };
